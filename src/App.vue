@@ -1,0 +1,36 @@
+<template>
+  <v-app>
+    <v-navigation-drawer 
+      app
+      temporary
+      v-model="drawer"
+      ></v-navigation-drawer>
+    <v-toolbar app dark color="primary">
+      <v-toolbar-side-icon
+        @click="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title>Akyl blog</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat>
+          <v-icon left>bug_report</v-icon>
+          Link One
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+    <v-content>
+
+      <router-view></router-view>
+
+    </v-content>
+  </v-app>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      drawer: false
+    }
+  }
+}
+</script>
