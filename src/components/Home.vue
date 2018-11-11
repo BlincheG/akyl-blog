@@ -54,31 +54,12 @@
 
 <script>
 	export default {
-		data () {
-			return {
-				ads: [
-					{
-						title: 'First',
-						description: 'Hello i am description',
-						promo: false,
-						imageSrc: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-						id: '123'
-					},
-					{
-						title: 'Second',
-						description: 'Hello i am description',
-						promo: true,
-						imageSrc: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-						id: '1234'
-					},
-					{
-						title: 'Third',
-						description: 'Hello i am description',
-						promo: true,
-						imageSrc: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-						id: '1235'
-					}
-				]
+		computed: {
+			promoAds () {
+				return this.$store.getters.promoAds
+			},
+			ads () {
+				return this.$store.getters.promoAds
 			}
 		}
 	}
